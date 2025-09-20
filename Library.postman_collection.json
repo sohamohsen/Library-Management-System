@@ -1,0 +1,5184 @@
+{
+	"info": {
+		"_postman_id": "0a762af7-d08a-448b-92c0-6ac825f029cb",
+		"name": "Library",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27049625"
+	},
+	"item": [
+		{
+			"name": "roles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzM2NjM1LCJleHAiOjE3NTgzNDAyMzV9.T_WMUZU3pwq6EFEbzRdY4euNcIoyygU7uJg35Gvo0sQ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL}}/api/roles/all",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"roles",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/roles/all",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0xJQlJBUklBTiJdLCJzdWIiOiJqb2huIiwiaWF0IjoxNzU4Mjk3MzI2LCJleHAiOjE3NTgzMDA5MjZ9.P1497FCPv4WxNp9ZHHO33dFfy26gtHEFkPh5_ktb0TU"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL}}/api/roles/all",
+							"host": [
+								"{{baseURL}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"all"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Method"
+						},
+						{
+							"key": "Vary",
+							"value": "Access-Control-Request-Headers"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json;charset=UTF-8"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Content-Length",
+							"value": "99"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 19 Sep 2025 16:00:26 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Unauthorized\",\n    \"statusCode\": 401,\n    \"timestamp\": \"2025-09-19T18:00:26.8271938\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"admin@library.local\",\n  \"password\": \"Admin@123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/api/auth/login",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImFkbWluIiwiaWF0IjoxNzU4MzA2NDE4LCJleHAiOjE3NTgzMTAwMTh9.WUXnC8i8IdyCKfAWYZCJKs8LsrSKxwLD9SJ2NbCG9WM"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fullName\": \"John Doe\",\n  \"email\": \"soha@admin.com\",\n  \"password\": \"password123\",\n  \"phone\": \"01012345678\",\n  \"roleId\": 1,\n  \"enabled\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/admin/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"admin",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzM2NjM1LCJleHAiOjE3NTgzNDAyMzV9.T_WMUZU3pwq6EFEbzRdY4euNcIoyygU7uJg35Gvo0sQ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Science Fiction\",\n  \"description\": \"Books that explore futuristic science and adventures.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/categories/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "category",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzM2NjM1LCJleHAiOjE3NTgzNDAyMzV9.T_WMUZU3pwq6EFEbzRdY4euNcIoyygU7uJg35Gvo0sQ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\": \"John Doe\",\n    \"email\": \"soha@admin.com\",\n    \"password\": \"password123\",\n    \"phone\": \"01012345678\",\n    \"roleId\": 1,\n    \"enabled\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/categories/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/categories/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzM2NjM1LCJleHAiOjE3NTgzNDAyMzV9.T_WMUZU3pwq6EFEbzRdY4euNcIoyygU7uJg35Gvo0sQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"John Doe\",\n    \"email\": \"soha@admin.com\",\n    \"password\": \"password123\",\n    \"phone\": \"01012345678\",\n    \"roleId\": 1,\n    \"enabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 02:56:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Category fetched successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Science Fiction\",\n        \"description\": \"Books that explore futuristic science concepts and adventures.\"\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T04:56:24.2870428\"\n}"
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzM2NjM1LCJleHAiOjE3NTgzNDAyMzV9.T_WMUZU3pwq6EFEbzRdY4euNcIoyygU7uJg35Gvo0sQ"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/categories/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/categories/1",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzM2NjM1LCJleHAiOjE3NTgzNDAyMzV9.T_WMUZU3pwq6EFEbzRdY4euNcIoyygU7uJg35Gvo0sQ"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"John Doe\",\n    \"email\": \"soha@admin.com\",\n    \"password\": \"password123\",\n    \"phone\": \"01012345678\",\n    \"roleId\": 1,\n    \"enabled\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/categories/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"categories",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 02:56:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Category fetched successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Science Fiction\",\n        \"description\": \"Books that explore futuristic science concepts and adventures.\"\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T04:56:24.2870428\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create-category",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzQwNjY2LCJleHAiOjE3NTgzNDQyNjZ9.KWfLa6yBrwdAnRAsgupbZLh9WMSSfn-Ve3k1w1M83Xk"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Comdey\",\n  \"description\": \"Books full of suspense, plot twists, and thrilling investigations.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/categories/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"categories",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create-publisher",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Penguin Random House\",\n  \"founderYear\": 1927\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/publishers/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publishers",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/publishers/create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Penguin Random House\",\n  \"founderYear\": 1927\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/publishers/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"publishers",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 06:51:16 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Publisher created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Penguin Random House\",\n        \"founderYear\": 1927\n    },\n    \"statusCode\": 201,\n    \"timestamp\": \"2025-09-20T08:51:16.8969138\"\n}"
+				},
+				{
+					"name": "http://localhost:8080/api/publishers/create",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Penguin Random House\",\n  \"founderYear\": 1927\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/publishers/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"publishers",
+								"create"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 06:52:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Publisher already exists\",\n    \"statusCode\": 409,\n    \"timestamp\": \"2025-09-20T08:52:38.1256561\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update-publisher",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Penguin Random House\",\n  \"founderYear\": 1928\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/publishers/update1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publishers",
+						"update1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/publishers/update",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Penguin Random House\",\n  \"founderYear\": 1928\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/publishers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"publishers",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 06:53:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Publisher updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Penguin Random House\",\n        \"founderYear\": 1928\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T08:53:17.054529\"\n}"
+				}
+			]
+		},
+		{
+			"name": "publishers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/publishers/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publishers",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "publishers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/publishers/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"publishers",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 06:59:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Publishers fetched successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Penguin Random House\",\n            \"founderYear\": 1928\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T08:59:00.9994263\"\n}"
+				}
+			]
+		},
+		{
+			"name": "publisher",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/publishers/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publishers",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "publisher",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/publishers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"publishers",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 06:59:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Publisher fetched successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Penguin Random House\",\n        \"founderYear\": 1928\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T08:59:45.7829761\"\n}"
+				},
+				{
+					"name": "publisher",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/publishers/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"publishers",
+								"2"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:00:20 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Publisher not found\",\n    \"statusCode\": 404,\n    \"timestamp\": \"2025-09-20T09:00:20.415845\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete-publisher",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/publishers/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"publishers",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "http://localhost:8080/api/publishers/delete/2",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/publishers/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"publishers",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:03:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "create-author",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fullName\": \"Agatha Christie\",\n  \"bio\": \"British writer known for detective novels featuring Hercule Poirot and Miss Marple.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authors/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authors",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create-author",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"Agatha Christie\",\n  \"bio\": \"British writer known for detective novels featuring Hercule Poirot and Miss Marple.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/authors/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authors",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:14:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Author created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"fullName\": \"Agatha Christie\",\n        \"bio\": \"British writer known for detective novels featuring Hercule Poirot and Miss Marple.\"\n    },\n    \"statusCode\": 201,\n    \"timestamp\": \"2025-09-20T09:14:18.1172199\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update-auther",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fullName\": \"J.K. Rowling\",\n  \"bio\": \"British author famous for the Harry Potter series, which became one of  best-selling book series in history.\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authors/update/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authors",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update-auther",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"J.K. Rowling\",\n  \"bio\": \"British author famous for the Harry Potter series, which became one of  best-selling book series in history.\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/authors/update/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authors",
+								"update",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:16:29 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Author updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"fullName\": \"J.K. Rowling\",\n        \"bio\": \"British author famous for the Harry Potter series, which became one of  best-selling book series in history.\"\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T09:16:29.1242062\"\n}"
+				}
+			]
+		},
+		{
+			"name": "delete-author",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authors/delete/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authors",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "delete-author",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/authors/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authors",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:17:14 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "author",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authors/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authors",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "author",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:18:09 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Author fetched successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"fullName\": \"Agatha Christie\",\n        \"bio\": \"British writer known for detective novels featuring Hercule Poirot and Miss Marple.\"\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T09:18:09.0396766\"\n}"
+				}
+			]
+		},
+		{
+			"name": "authors",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/authors/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"authors",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "authors",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/authors/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"authors",
+								"all"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:18:42 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Authors fetched successfully\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"fullName\": \"Agatha Christie\",\n            \"bio\": \"British writer known for detective novels featuring Hercule Poirot and Miss Marple.\"\n        }\n    ],\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T09:18:42.5587733\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create-book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"isbn\": \"9780140328721\",\n  \"title\": \"Matilda\",\n  \"language\": \"EN\",\n  \"authorId\": 1,\n  \"publisherId\": 1,\n  \"categoryId\": 1,\n  \"publicationYear\": 1988,\n  \"edition\": \"1st\",\n  \"summary\": \"A gifted girl with telekinetic powers.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/books/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create-book",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzUxMDYyLCJleHAiOjE3NTgzNTQ2NjJ9.VaVlRGTrchKRbkf9YJV2GrvM7cG1ENQja3zAAqyaXwA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"isbn\": \"9780140328721\",\n  \"title\": \"Matilda\",\n  \"language\": \"EN\",\n  \"authorId\": 1,\n  \"publisherId\": 1,\n  \"categoryId\": 1,\n  \"publicationYear\": 1988,\n  \"edition\": \"1st\",\n  \"summary\": \"A gifted girl with telekinetic powers.\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/books/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 07:46:39 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"isbn\": \"9780140328721\",\n        \"title\": \"Matilda\",\n        \"language\": \"EN\",\n        \"authorId\": 1,\n        \"authorName\": \"Agatha Christie\",\n        \"publisherId\": 1,\n        \"publisherName\": \"Penguin Random House\",\n        \"categoryId\": 1,\n        \"categoryName\": \"Science Fiction\",\n        \"publicationYear\": 1988,\n        \"edition\": \"1st\",\n        \"summary\": \"A gifted girl with telekinetic powers.\",\n        \"createAt\": \"2025-09-20T09:46:39.3691305\",\n        \"updateAt\": \"2025-09-20T09:46:39.3691305\",\n        \"createBy\": 3\n    },\n    \"statusCode\": 201,\n    \"timestamp\": \"2025-09-20T09:46:39.4198684\"\n}"
+				}
+			]
+		},
+		{
+			"name": "books",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzU3NzYwLCJleHAiOjE3NTgzNjEzNjB9.SSPzAotFjgGcRVOziIs-LCM47MVHwBXL9GR6u32IH0c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/books/all?page=0&size=10&sort=title,asc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"all"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "10"
+						},
+						{
+							"key": "sort",
+							"value": "title,asc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzU3NzYwLCJleHAiOjE3NTgzNjEzNjB9.SSPzAotFjgGcRVOziIs-LCM47MVHwBXL9GR6u32IH0c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/all?page=0&size=10&sort=title,asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "title,asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 09:16:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Books fetched successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"isbn\": \"9780140328721\",\n                \"title\": \"Matilda\",\n                \"language\": \"EN\",\n                \"authorId\": 1,\n                \"authorName\": \"Agatha Christie\",\n                \"publisherId\": 1,\n                \"publisherName\": \"Penguin Random House\",\n                \"categoryId\": 1,\n                \"categoryName\": \"Science Fiction\",\n                \"publicationYear\": 1988,\n                \"edition\": \"1st\",\n                \"summary\": \"A gifted girl with telekinetic powers.\",\n                \"createAt\": \"2025-09-20T09:46:39.369131\",\n                \"updateAt\": \"2025-09-20T09:46:39.369131\",\n                \"createBy\": 3\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T11:16:25.4951066\"\n}"
+				},
+				{
+					"name": "books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzU3NzYwLCJleHAiOjE3NTgzNjEzNjB9.SSPzAotFjgGcRVOziIs-LCM47MVHwBXL9GR6u32IH0c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/all?page=0&size=10&sort=title,asc&q=Matilda",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "title,asc"
+								},
+								{
+									"key": "q",
+									"value": "Matilda"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 09:21:18 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Books fetched successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"isbn\": \"9780140328721\",\n                \"title\": \"Matilda\",\n                \"language\": \"EN\",\n                \"authorId\": 1,\n                \"authorName\": \"Agatha Christie\",\n                \"publisherId\": 1,\n                \"publisherName\": \"Penguin Random House\",\n                \"categoryId\": 1,\n                \"categoryName\": \"Science Fiction\",\n                \"publicationYear\": 1988,\n                \"edition\": \"1st\",\n                \"summary\": \"A gifted girl with telekinetic powers.\",\n                \"createAt\": \"2025-09-20T09:46:39.369131\",\n                \"updateAt\": \"2025-09-20T09:46:39.369131\",\n                \"createBy\": 3\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T11:21:18.5357083\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzU3NzYwLCJleHAiOjE3NTgzNjEzNjB9.SSPzAotFjgGcRVOziIs-LCM47MVHwBXL9GR6u32IH0c",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/books/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"books",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "books",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzU3NzYwLCJleHAiOjE3NTgzNjEzNjB9.SSPzAotFjgGcRVOziIs-LCM47MVHwBXL9GR6u32IH0c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/all?page=0&size=10&sort=title,asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								},
+								{
+									"key": "sort",
+									"value": "title,asc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 09:16:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Books fetched successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"isbn\": \"9780140328721\",\n                \"title\": \"Matilda\",\n                \"language\": \"EN\",\n                \"authorId\": 1,\n                \"authorName\": \"Agatha Christie\",\n                \"publisherId\": 1,\n                \"publisherName\": \"Penguin Random House\",\n                \"categoryId\": 1,\n                \"categoryName\": \"Science Fiction\",\n                \"publicationYear\": 1988,\n                \"edition\": \"1st\",\n                \"summary\": \"A gifted girl with telekinetic powers.\",\n                \"createAt\": \"2025-09-20T09:46:39.369131\",\n                \"updateAt\": \"2025-09-20T09:46:39.369131\",\n                \"createBy\": 3\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 10,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalElements\": 1,\n        \"totalPages\": 1,\n        \"size\": 10,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"numberOfElements\": 1,\n        \"first\": true,\n        \"empty\": false\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T11:16:25.4951066\"\n}"
+				},
+				{
+					"name": "book",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzU3NzYwLCJleHAiOjE3NTgzNjEzNjB9.SSPzAotFjgGcRVOziIs-LCM47MVHwBXL9GR6u32IH0c",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 09:17:32 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book fetched successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"isbn\": \"9780140328721\",\n        \"title\": \"Matilda\",\n        \"language\": \"EN\",\n        \"authorId\": 1,\n        \"authorName\": \"Agatha Christie\",\n        \"publisherId\": 1,\n        \"publisherName\": \"Penguin Random House\",\n        \"categoryId\": 1,\n        \"categoryName\": \"Science Fiction\",\n        \"publicationYear\": 1988,\n        \"edition\": \"1st\",\n        \"summary\": \"A gifted girl with telekinetic powers.\",\n        \"createAt\": \"2025-09-20T09:46:39.369131\",\n        \"updateAt\": \"2025-09-20T09:46:39.369131\",\n        \"createBy\": 3\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T11:17:32.8054172\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create-book-copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"bookId\": 1,\n  \"barcode\": \"BC-2025-001\",\n  \"statusId\": 1,\n  \"acquiredAt\": \"2025-09-20T10:00:00\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book-copies/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book-copies",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create-book-copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookId\": 1,\n  \"barcode\": \"BC-2025-001\",\n  \"statusId\": 1,\n  \"acquiredAt\": \"2025-09-20T10:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:15:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book copy created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"bookId\": 1,\n        \"bookTitle\": \"Matilda\",\n        \"barcode\": \"BC-2025-001\",\n        \"statusId\": 1,\n        \"statusName\": \"AVAILABLE\",\n        \"acquiredAt\": \"2025-09-20T10:00:00\",\n        \"createAt\": \"2025-09-20T13:15:29.8959621\",\n        \"updateAt\": \"2025-09-20T13:15:29.8959621\",\n        \"createBy\": 3\n    },\n    \"statusCode\": 201,\n    \"timestamp\": \"2025-09-20T13:15:30.0015679\"\n}"
+				},
+				{
+					"name": "create-book-copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"bookId\": 1,\r\n  \"barcode\": \"BC-2025-002\",\r\n  \"statusId\": 1,\r\n  \"acquiredAt\": \"2025-09-20T10:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"create"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:34:47 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Barcode already exists\",\n    \"statusCode\": 409,\n    \"timestamp\": \"2025-09-20T13:34:47.3900898\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update-book-copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"statusId\": 2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/book-copies/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book-copies",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create-book-copy",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookId\": 1,\n  \"barcode\": \"BC-2025-001\",\n  \"statusId\": 1,\n  \"acquiredAt\": \"2025-09-20T10:00:00\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "",
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:15:30 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [
+						{
+							"expires": "Invalid Date",
+							"domain": "",
+							"path": ""
+						}
+					],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book copy created successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"bookId\": 1,\n        \"bookTitle\": \"Matilda\",\n        \"barcode\": \"BC-2025-001\",\n        \"statusId\": 1,\n        \"statusName\": \"AVAILABLE\",\n        \"acquiredAt\": \"2025-09-20T10:00:00\",\n        \"createAt\": \"2025-09-20T13:15:29.8959621\",\n        \"updateAt\": \"2025-09-20T13:15:29.8959621\",\n        \"createBy\": 3\n    },\n    \"statusCode\": 201,\n    \"timestamp\": \"2025-09-20T13:15:30.0015679\"\n}"
+				},
+				{
+					"name": "update-book-copy",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"statusId\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"update",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:26:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book copy updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"bookId\": 1,\n        \"bookTitle\": \"Matilda\",\n        \"barcode\": \"BC-2025-001\",\n        \"statusId\": 2,\n        \"statusName\": \"LOANED\",\n        \"acquiredAt\": \"2025-09-20T10:00:00\",\n        \"createAt\": \"2025-09-20T13:15:29.895962\",\n        \"updateAt\": \"2025-09-20T13:26:12.1506633\",\n        \"createBy\": 3\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T13:26:12.5028086\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book-copies",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/book-copies/all?page=0&size=20&sort=id,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book-copies",
+						"all"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						},
+						{
+							"key": "sort",
+							"value": "id,desc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "book-copies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/all?page=0&size=20&sort=id,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:29:25 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book copies fetched successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"bookId\": 1,\n                \"bookTitle\": \"Matilda\",\n                \"barcode\": \"BC-2025-001\",\n                \"statusId\": 2,\n                \"statusName\": \"LOANED\",\n                \"acquiredAt\": \"2025-09-20T10:00:00\",\n                \"createAt\": \"2025-09-20T13:15:29.895962\",\n                \"updateAt\": \"2025-09-20T13:26:12.150663\",\n                \"createBy\": 3\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 20,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalPages\": 1,\n        \"totalElements\": 1,\n        \"size\": 20,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"first\": true,\n        \"numberOfElements\": 1,\n        \"empty\": false\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T13:29:25.4920405\"\n}"
+				},
+				{
+					"name": "book-copies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/all?page=0&size=20&sort=id,desc&statusId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								},
+								{
+									"key": "statusId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:31:02 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book copies fetched successfully\",\n    \"data\": {\n        \"content\": [],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 20,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalPages\": 0,\n        \"totalElements\": 0,\n        \"size\": 20,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"first\": true,\n        \"numberOfElements\": 0,\n        \"empty\": true\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T13:31:02.8971447\"\n}"
+				},
+				{
+					"name": "book-copies",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/all?page=0&size=20&sort=id,desc&statusId=&bookId=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "id,desc"
+								},
+								{
+									"key": "statusId",
+									"value": ""
+								},
+								{
+									"key": "bookId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:31:45 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book copies fetched successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"bookId\": 1,\n                \"bookTitle\": \"Matilda\",\n                \"barcode\": \"BC-2025-001\",\n                \"statusId\": 2,\n                \"statusName\": \"LOANED\",\n                \"acquiredAt\": \"2025-09-20T10:00:00\",\n                \"createAt\": \"2025-09-20T13:15:29.895962\",\n                \"updateAt\": \"2025-09-20T13:26:12.150663\",\n                \"createBy\": 3\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 20,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalPages\": 1,\n        \"totalElements\": 1,\n        \"size\": 20,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"first\": true,\n        \"numberOfElements\": 1,\n        \"empty\": false\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T13:31:45.5038091\"\n}"
+				}
+			]
+		},
+		{
+			"name": "book-copy",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/book-copies/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"book-copies",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "book-copy",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzY2Mzg3LCJleHAiOjE3NTgzNjk5ODd9.ikhH2qQnkYbvnw7qPvCV1iv7KKY7-cv4-LkPLIILyxA"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/book-copies/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"book-copies",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 11:36:33 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Book copy fetched successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"bookId\": 1,\n        \"bookTitle\": \"Matilda\",\n        \"barcode\": \"BC-2025-002\",\n        \"statusId\": 1,\n        \"statusName\": \"AVAILABLE\",\n        \"acquiredAt\": \"2025-09-20T10:00:00\",\n        \"createAt\": \"2025-09-20T13:34:40.785078\",\n        \"updateAt\": \"2025-09-20T13:34:40.785078\",\n        \"createBy\": 3\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T13:36:33.714334\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create-member",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fullName\": \"Soha Mohsen\",\n    \"email\": \"soha.mohsen@example.com\",\n    \"phone\": \"01234567890\",\n    \"joinedOn\": \"2025-09-20\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/members/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"members",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create-member",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"fullName\": \"Soha Mohsen\",\n    \"email\": \"soha.mohsen@example.com\",\n    \"phone\": \"01234567890\",\n    \"joinedOn\": \"2025-09-20\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/members/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"members",
+								"create"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 15:11:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Email already exists\",\n    \"statusCode\": 409,\n    \"timestamp\": \"2025-09-20T17:11:17.0727348\"\n}"
+				}
+			]
+		},
+		{
+			"name": "member",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/members/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"members",
+						"2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "member",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/members/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"members",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 15:19:24 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Member retrieved successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"fullName\": \"Soha Mohsen\",\n        \"email\": \"sarz.mohsen@example.com\",\n        \"phone\": \"01234567880\",\n        \"address\": null,\n        \"dateOfBirth\": null,\n        \"active\": true,\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T17:19:24.6300285\"\n}"
+				}
+			]
+		},
+		{
+			"name": "members",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "page",
+							"value": "0",
+							"type": "text"
+						},
+						{
+							"key": "size",
+							"value": "20",
+							"type": "text"
+						},
+						{
+							"key": "sort",
+							"value": "joinedOn,desc",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/members/all?page=0&size=20&sort=joinedOn,desc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"members",
+						"all"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "0"
+						},
+						{
+							"key": "size",
+							"value": "20"
+						},
+						{
+							"key": "sort",
+							"value": "joinedOn,desc"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "members",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "sort",
+									"value": "joinedOn,desc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/members/all?page=0&size=20&sort=joinedOn,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"members",
+								"all"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "joinedOn,desc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 15:23:37 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Members fetched successfully\",\n    \"data\": {\n        \"content\": [\n            {\n                \"id\": 1,\n                \"fullName\": \"Soha Mohsen\",\n                \"email\": \"soha.mohsen@example.com\",\n                \"phone\": \"01234567890\",\n                \"address\": null,\n                \"dateOfBirth\": null,\n                \"active\": true,\n                \"createdAt\": null,\n                \"updatedAt\": null\n            },\n            {\n                \"id\": 2,\n                \"fullName\": \"Soha Mohsen\",\n                \"email\": \"sarz.mohsen@example.com\",\n                \"phone\": \"01234567880\",\n                \"address\": null,\n                \"dateOfBirth\": null,\n                \"active\": true,\n                \"createdAt\": null,\n                \"updatedAt\": null\n            }\n        ],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 20,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalElements\": 2,\n        \"totalPages\": 1,\n        \"size\": 20,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"first\": true,\n        \"numberOfElements\": 2,\n        \"empty\": false\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T17:23:37.7585546\"\n}"
+				}
+			]
+		},
+		{
+			"name": "update-member",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"fullName\": \"Soha Mohsen Updated\",\n  \"email\": \"soha.mohsen.updated@example.com\",\n  \"phone\": \"01234567891\",\n  \"address\": \"Cairo, Egypt - Updated\",\n  \"dateOfBirth\": \"2000-05-15\",\n  \"joinedOn\": \"2025-09-20\",\n  \"active\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/members/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"members",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "update-member",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"Soha Mohsen Updated\",\n  \"email\": \"soha.mohsen.updated@example.com\",\n  \"phone\": \"01234567891\",\n  \"address\": \"Cairo, Egypt - Updated\",\n  \"dateOfBirth\": \"2000-05-15\",\n  \"joinedOn\": \"2025-09-20\",\n  \"active\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/members/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"members",
+								"update",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 15:26:01 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Member updated successfully\",\n    \"data\": {\n        \"id\": 1,\n        \"fullName\": \"Soha Mohsen Updated\",\n        \"email\": \"soha.mohsen.updated@example.com\",\n        \"phone\": \"01234567891\",\n        \"address\": null,\n        \"dateOfBirth\": null,\n        \"active\": true,\n        \"createdAt\": null,\n        \"updatedAt\": null\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T17:26:01.0876131\"\n}"
+				}
+			]
+		},
+		{
+			"name": "deactivate-member",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/members/deactivate/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"members",
+						"deactivate",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "deactivate-member",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzc5MzUxLCJleHAiOjE3NTgzODI5NTF9.WYfHVXwUjrER-q1DFQGJx03-VJOKkrimRI8vyj-374U"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/members/deactivate/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"members",
+								"deactivate",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 15:29:11 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Member deactivated\",\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T17:29:11.3570475\"\n}"
+				}
+			]
+		},
+		{
+			"name": "create-loan",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzg2NTY1LCJleHAiOjE3NTgzOTAxNjV9.Oeq3RhOEHiw_MSN0sXMbToWaqAKI33QVQj8sXcmi6g8"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n   \"memberId\": 3,\n   \"dueAt\": \"2025-10-05T18:00:00\",\n   \"copyIds\": [101,102]\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/loans/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loans",
+						"create"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "create-loan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzg2NTY1LCJleHAiOjE3NTgzOTAxNjV9.Oeq3RhOEHiw_MSN0sXMbToWaqAKI33QVQj8sXcmi6g8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"memberId\": 1,\n   \"dueAt\": \"2025-10-05T18:00:00\",\n   \"copyIds\": [101,102]\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"create"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 16:43:07 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Member not found\",\n    \"statusCode\": 404,\n    \"timestamp\": \"2025-09-20T18:43:07.2757155\"\n}"
+				},
+				{
+					"name": "create-loan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzg2NTY1LCJleHAiOjE3NTgzOTAxNjV9.Oeq3RhOEHiw_MSN0sXMbToWaqAKI33QVQj8sXcmi6g8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"memberId\": 1,\n   \"dueAt\": \"2025-10-05T18:00:00\",\n   \"copyIds\": [101,102]\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"create"
+							]
+						}
+					},
+					"status": "Bad Request",
+					"code": 400,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 16:43:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Some copyIds not found\",\n    \"statusCode\": 400,\n    \"timestamp\": \"2025-09-20T18:43:44.6151997\"\n}"
+				},
+				{
+					"name": "create-loan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzg2NTY1LCJleHAiOjE3NTgzOTAxNjV9.Oeq3RhOEHiw_MSN0sXMbToWaqAKI33QVQj8sXcmi6g8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"memberId\": 1,\n   \"dueAt\": \"2025-10-05T18:00:00\",\n   \"copyIds\": [1]\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"create"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 16:44:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Copy 1 is not available\",\n    \"statusCode\": 409,\n    \"timestamp\": \"2025-09-20T18:44:03.7260517\"\n}"
+				},
+				{
+					"name": "create-loan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzg2NTY1LCJleHAiOjE3NTgzOTAxNjV9.Oeq3RhOEHiw_MSN0sXMbToWaqAKI33QVQj8sXcmi6g8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"memberId\": 1,\n   \"dueAt\": \"2025-10-05T18:00:00\",\n   \"copyIds\": [2]\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"create"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 16:45:03 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Loan created\",\n    \"data\": {\n        \"id\": 1,\n        \"memberId\": 1,\n        \"status\": 0,\n        \"dueAt\": \"2025-10-05T18:00:00\",\n        \"createAt\": \"2025-09-20T18:45:03.509367\",\n        \"updateAt\": \"2025-09-20T18:45:03.509367\",\n        \"createdById\": 3,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"copyId\": 2,\n                \"returnedAt\": null,\n                \"fineAmount\": 0\n            }\n        ]\n    },\n    \"statusCode\": 201,\n    \"timestamp\": \"2025-09-20T18:45:03.6749762\"\n}"
+				},
+				{
+					"name": "create-loan",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzg2NTY1LCJleHAiOjE3NTgzOTAxNjV9.Oeq3RhOEHiw_MSN0sXMbToWaqAKI33QVQj8sXcmi6g8"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n   \"memberId\": 1,\n   \"dueAt\": \"2025-10-05T18:00:00\",\n   \"barcodes\": [\"BC-2025-001\"]\n }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"create"
+							]
+						}
+					},
+					"status": "Conflict",
+					"code": 409,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 17:16:17 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": false,\n    \"error\": \"Copy with barcode BC-2025-001 is not available\",\n    \"statusCode\": 409,\n    \"timestamp\": \"2025-09-20T19:16:17.8764398\"\n}"
+				}
+			]
+		},
+		{
+			"name": "loan",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzkzNDYxLCJleHAiOjE3NTgzOTcwNjF9.Mgy3XMLxfLEbEvEcbnITw1H6peDzyKekIXeJjkUXOLo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/loans/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loans",
+						"1"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "loan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzkzNDYxLCJleHAiOjE3NTgzOTcwNjF9.Mgy3XMLxfLEbEvEcbnITw1H6peDzyKekIXeJjkUXOLo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/loans/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 18:39:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Loan fetched\",\n    \"data\": {\n        \"id\": 1,\n        \"memberId\": 1,\n        \"status\": 0,\n        \"dueAt\": \"2025-10-05T18:00:00\",\n        \"createAt\": \"2025-09-20T18:45:03.509367\",\n        \"updateAt\": \"2025-09-20T18:45:03.509367\",\n        \"createdById\": 3,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"copyId\": 2,\n                \"barcode\": \"BC-2025-002\",\n                \"bookId\": 1,\n                \"bookTitle\": \"Matilda\",\n                \"bookIsbn\": \"9780140328721\",\n                \"returnedAt\": null,\n                \"fineAmount\": 0\n            }\n        ]\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T20:39:04.2681101\"\n}"
+				}
+			]
+		},
+		{
+			"name": "loans",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzkzNDYxLCJleHAiOjE3NTgzOTcwNjF9.Mgy3XMLxfLEbEvEcbnITw1H6peDzyKekIXeJjkUXOLo",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/api/loans/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"loans",
+						"all"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "loan",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4MzkzNDYxLCJleHAiOjE3NTgzOTcwNjF9.Mgy3XMLxfLEbEvEcbnITw1H6peDzyKekIXeJjkUXOLo",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/api/loans/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 18:39:04 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Loan fetched\",\n    \"data\": {\n        \"id\": 1,\n        \"memberId\": 1,\n        \"status\": 0,\n        \"dueAt\": \"2025-10-05T18:00:00\",\n        \"createAt\": \"2025-09-20T18:45:03.509367\",\n        \"updateAt\": \"2025-09-20T18:45:03.509367\",\n        \"createdById\": 3,\n        \"items\": [\n            {\n                \"id\": 1,\n                \"copyId\": 2,\n                \"barcode\": \"BC-2025-002\",\n                \"bookId\": 1,\n                \"bookTitle\": \"Matilda\",\n                \"bookIsbn\": \"9780140328721\",\n                \"returnedAt\": null,\n                \"fineAmount\": 0\n            }\n        ]\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T20:39:04.2681101\"\n}"
+				},
+				{
+					"name": "loans",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6WyJST0xFX0FETUlOIl0sInN1YiI6ImpvaG4yIiwiaWF0IjoxNzU4Mzk2NjU3LCJleHAiOjE3NTg0MDAyNTd9.VcewzcsAijARzymgHgOSYDn7SMhs08od4BVht7_a2cI"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "memberId",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "overdueOnly",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "createdFrom",
+									"value": "2025-09-01T00:00:00",
+									"type": "text"
+								},
+								{
+									"key": "createdTo",
+									"value": "2025-09-20T23:59:59",
+									"type": "text"
+								},
+								{
+									"key": "dueFrom",
+									"value": "2025-09-15T00:00:00",
+									"type": "text"
+								},
+								{
+									"key": "dueTo",
+									"value": "2025-10-05T00:00:00",
+									"type": "text"
+								},
+								{
+									"key": "createdById",
+									"value": "3",
+									"type": "text"
+								},
+								{
+									"key": "q",
+									"value": "ali",
+									"type": "text"
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "size",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "sort",
+									"value": "dueAt,asc",
+									"type": "text"
+								},
+								{
+									"key": "sort",
+									"value": "createAt,desc",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/loans/all?memberId=1&status=0&overdueOnly=true&createdFrom=2025-09-01T00:00:00&createdTo=2025-09-20T23:59:59&dueFrom=2025-09-15T00:00:00&dueTo=2025-10-05T00:00:00&createdById=3&page=0&size=20&sort=dueAt,asc&sort=createAt,desc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"loans",
+								"all"
+							],
+							"query": [
+								{
+									"key": "memberId",
+									"value": "1"
+								},
+								{
+									"key": "status",
+									"value": "0"
+								},
+								{
+									"key": "overdueOnly",
+									"value": "true"
+								},
+								{
+									"key": "createdFrom",
+									"value": "2025-09-01T00:00:00"
+								},
+								{
+									"key": "createdTo",
+									"value": "2025-09-20T23:59:59"
+								},
+								{
+									"key": "dueFrom",
+									"value": "2025-09-15T00:00:00"
+								},
+								{
+									"key": "dueTo",
+									"value": "2025-10-05T00:00:00"
+								},
+								{
+									"key": "createdById",
+									"value": "3"
+								},
+								{
+									"key": "q",
+									"value": "ali",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "20"
+								},
+								{
+									"key": "sort",
+									"value": "dueAt,asc"
+								},
+								{
+									"key": "sort",
+									"value": "createAt,desc"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "X-XSS-Protection",
+							"value": "0"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache, no-store, max-age=0, must-revalidate"
+						},
+						{
+							"key": "Pragma",
+							"value": "no-cache"
+						},
+						{
+							"key": "Expires",
+							"value": "0"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 20 Sep 2025 19:31:38 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Loans fetched\",\n    \"data\": {\n        \"content\": [],\n        \"pageable\": {\n            \"pageNumber\": 0,\n            \"pageSize\": 20,\n            \"sort\": {\n                \"empty\": false,\n                \"sorted\": true,\n                \"unsorted\": false\n            },\n            \"offset\": 0,\n            \"paged\": true,\n            \"unpaged\": false\n        },\n        \"last\": true,\n        \"totalElements\": 0,\n        \"totalPages\": 0,\n        \"size\": 20,\n        \"number\": 0,\n        \"sort\": {\n            \"empty\": false,\n            \"sorted\": true,\n            \"unsorted\": false\n        },\n        \"first\": true,\n        \"numberOfElements\": 0,\n        \"empty\": true\n    },\n    \"statusCode\": 200,\n    \"timestamp\": \"2025-09-20T21:31:38.1566952\"\n}"
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": ""
+		},
+		{
+			"key": "token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
