@@ -28,19 +28,13 @@ jobs:
 
       - name: Build (skip tests)
         run: mvn -B -ntp clean verify -DskipTests
-
-      # خطوات Docker تشتغل بس لو الاتنين متوفرين
-      - name: Log in to Docker Hub
-        if: ${{ env.DOCKER_USERNAME != '' && env.DOCKER_PASSWORD != '' }}
-        uses: docker/login-action@v3
-        with:
-          username: ${{ env.DOCKER_USERNAME }}
-          password: ${{ env.DOCKER_PASSWORD }}
-
+      - name: Log in to Docker hub
+        uses: docker/login-active@3
+        with: 
+          registry: docker.io
+          username: ${{ env.DOCKER.USERNAME }}
+          password: ${{ env.DOCKER.PASSWORD }}
       - name: Build Docker image
-        if: ${{ env.DOCKER_USERNAME != '' && env.DOCKER_PASSWORD != '' }}
-        run: docker build -t ${{ env.DOCKER_USERNAME }}/library-management:latest .
-
+        run: docker build -t ${{ env.DOCKER.USERNAME }}/library-management:latest
       - name: Push Docker image
-        if: ${{ env.DOCKER_USERNAME != '' && env.DOCKER_PASSWORD != '' }}
-        run: docker push ${{ env.DOCKER_USERNAME }}/library-management:latest
+        run: doker push ${{ env.DOCKER.USERNAME }}/library-management:latest
