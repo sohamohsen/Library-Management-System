@@ -38,3 +38,7 @@ INSERT INTO system_users(username, email, full_name, password, enabled, create_a
 VALUES ('admin', 'admin@example.com', 'Admin User',
         '$2a$10$7EqJtq98hPqEX7fNZaFWo./Xq5Q6DOW3EtFPXK62o/4pG7Wu3.yGa', -- password = "password"
         true, NOW(), NOW(), 1, (SELECT id FROM roles WHERE role = 'ADMIN'));
+
+## CI/CD
+![CI](https://github.com/sohamohsen/Library-Management-System/actions/workflows/ci.yml/badge.svg)
+
