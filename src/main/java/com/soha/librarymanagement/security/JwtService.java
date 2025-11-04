@@ -18,12 +18,10 @@ import java.util.stream.Collectors;
 public class JwtService {
 
     @Value("${jwt.secret}")
-    private String secretKey; // Base64-encoded secret. For HS256, 256-bit (32 bytes) BEFORE Base64.
+    private String secretKey;
 
     @Value("${jwt.expiration}")
-    private long jwtExpiration; // in milliseconds
-
-    /** ------- Public API ------- */
+    private long jwtExpiration;
 
     public String extractUsername(String token) {
         return extractClaim(token, Claims::getSubject);
@@ -106,8 +104,6 @@ public class JwtService {
     }
 
     private Key getSignInKey() {
-        // secretKey MUST be Base64 for this to work:
-        // e.g. 32 random bytes -> Base64 -> set in application.yml as jwt.secret
         byte[] keyBytes = Decoders.BASE64.decode(secretKey);
         return Keys.hmacShaKeyFor(keyBytes);
     }
