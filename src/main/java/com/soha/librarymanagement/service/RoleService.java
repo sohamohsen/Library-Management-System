@@ -1,6 +1,7 @@
 package com.soha.librarymanagement.service;
 
 import com.soha.librarymanagement.dto.RoleDto;
+import com.soha.librarymanagement.entity.Role;
 import com.soha.librarymanagement.repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,4 +21,12 @@ public class RoleService {
                 .toList();
     }
 
+    public RoleDto addRole(RoleDto roleDto) {
+        Role role = new Role();
+        role.setRole(roleDto.getRole());
+        roleRepository.save(
+                role
+        );
+        return new RoleDto(role.getId(), role.getRole());
+    }
 }

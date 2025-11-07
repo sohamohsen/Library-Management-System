@@ -17,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @ToString(exclude = "users")
 @EqualsAndHashCode(exclude = "users")
+@Builder
 public class Role {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

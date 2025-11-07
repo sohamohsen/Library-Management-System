@@ -1,56 +1,17 @@
+server:
+  port: ${PORT:8080}
+
 spring:
-  mvc:
-    servlet:
-      path: /api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
-    properties:
-      hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
-  sql:
-    init:
-      mode: never
 
 jwt:
-  secret: ${JWT_SECRET:TXlTdXBlclNlY3JldEtleUZvckp3dFNpZ25pbmcxMjM0NTY3ODkwIQ==}
+  secret: ${JWT_SECRET}
   expiration: ${JWT_EXPIRATION:3600000}
-
----
-spring:
-  config:
-    activate:
-      on-profile: dev
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://localhost:3306/library_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC}
-    username: ${SPRING_DATASOURCE_USERNAME:root}
-    password: ${SPRING_DATASOURCE_PASSWORD:root}
-
----
-spring:
-  config:
-    activate:
-      on-profile: docker
-  datasource:
-    url: ${SPRING_DATASOURCE_URL:jdbc:mysql://db:3306/library_db?allowPublicKeyRetrieval=true&useSSL=false&serverTimezone=UTC}
-    username: ${SPRING_DATASOURCE_USERNAME:lms}
-    password: ${SPRING_DATASOURCE_PASSWORD:lms}
-
----
-spring:
-  config:
-    activate:
-      on-profile: test
-  datasource:
-    url: jdbc:h2:mem:lms;DB_CLOSE_DELAY=-1;MODE=MySQL
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-  flyway:
-    enabled: false
-  liquibase:
-    enabled: false
