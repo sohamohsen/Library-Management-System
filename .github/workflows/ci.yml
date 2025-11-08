@@ -40,3 +40,6 @@ jobs:
 
       - name: Push Docker image
         run: docker push ${{ env.DOCKER_USERNAME }}/library-management:latest
+      - name: Trigger Render Deploy
+        run: |
+          curl -s -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
