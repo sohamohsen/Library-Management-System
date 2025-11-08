@@ -10,13 +10,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/role")
+@RequestMapping("/roles")
 @RequiredArgsConstructor
 //@PreAuthorize("hasRole('ADMIN')")
 public class RoleController {
     private final RoleService roleService;
 
-    @GetMapping
+    @GetMapping("/zro")
     public ResponseEntity<List<RoleDto>> getAllRoles() {
         List<RoleDto> roles = roleService.getAllRoles();
         return ResponseEntity.ok(roles);
