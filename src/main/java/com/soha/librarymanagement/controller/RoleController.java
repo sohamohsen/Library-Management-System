@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/roles")
+@RequestMapping("/role")
 @RequiredArgsConstructor
 //@PreAuthorize("hasRole('ADMIN')")
 public class RoleController {
